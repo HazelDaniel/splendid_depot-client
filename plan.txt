@@ -1,0 +1,36 @@
+TODO: ADD A MODIFIED STYLE TO THE CART ITEMS THAT ARE OUT OF SYNC WITH THE DB SO THE USER KNOWS WHETHER TO UPDATE THE CART OR NOT
+TODO: USE A QUERY MUTATION TO UPDATE DB CART AND THE CACHE TO POPULATE THE client DBinstanceCart
+
+CART:
+	[+]ON LAST AUTH SESSION ACTIVE:
+		fetch the database carts array created on sign up.
+
+		create two carts on the client side . one, the database instance cart(DBinstanceCart) and the other will
+		 be the client cart(clientCart) for client side mutations.
+
+		populate these two carts with the fetched array.
+
+	[+]ADD TO CART:
+		push the element to clientCart using the algorithm you designed earlier in the cart slice but this time
+		 with cart id included in the checks
+
+	[+]REMOVE FROM CART:
+		remove element from clientCart using the algorithm you designed earlier in the cart slice but this time
+		 using the id for the main check.
+
+	[+]CLEAR FROM CART:
+	clear element from clientCart using the algorithm you designed earlier in the cart slice but this time using
+	 the id for the main check.
+
+	[+]UPDATE CART:
+	first compare both carts before performing this operation to avoid unnecessary requests.
+
+	update the user's database cart with the clientCart;
+
+
+	[+]ON LAST AUTH SESSION INACTIVE:
+		 disable the ability to add to cart and ability to go to checkout and prompt the user with a friendly popup if
+		  they attempt to do the aforementioned
+
+	[+]ON SIGN OUT:
+		//confirm if you are going to need to set the cart manually back to null or just 
